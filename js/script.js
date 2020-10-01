@@ -71,7 +71,9 @@ $(document).ready(function(){
   $('#restart').click(function(){
     restart();
   });
-
+  $('#toggle').click(function(){
+    $('h1').toggleClass('anim')
+  })
 });
 
 function winner() {
