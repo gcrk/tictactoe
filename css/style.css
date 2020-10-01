@@ -1,53 +1,183 @@
-/* * {
-  margin: 0;
-  padding: 0;
-} */
+/* @font-face {
+  font-family: 'neon';
+  src: url('fonts/neon.ttf') format('truetype'); */
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Monoton'); */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  background-color: rgba(3, 19, 33, 1)
+}
 h1 {
-  margin: 0 auto;
-  width: 360px;
+  margin: 20px auto;
+  width: 700px;
   text-align: center;
+  /* color: rgba(255, 255, 255, 1); */
+  font-size: 90px;
+  font-family:  'Press Start 2P';
+  color: #c6e2ff;
+  /* animation: neon .1s ease-in-out infinite alternate; */
+  text-shadow:
+  0 0 6px rgba(202,228,225,0.98),
+  0 0 30px rgba(202,228,225,0.42),
+  0 0 12px rgba(30,132,242,0.58),
+  0 0 22px rgba(30,132,242,0.84),
+  0 0 38px rgba(30,132,242,0.88),
+  0 0 60px rgba(30,132,242,1);
+}
+#restart {
+  font-family: 'Press Start 2P';
+  padding: 10px;
+  position: relative;
+  color: rgba(33, 150, 243, 1);
+  letter-spacing: 5px;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 50px auto 30px;
+  text-align: center;
+  width: 250px;
+  text-shadow:
+  0 0 6px rgba(33, 150, 243, 0.92),
+  0 0 30px rgba(33, 150, 243, 0.34),
+  0 0 12px rgba(33, 150, 243, 0.52);
+}
+#restart:hover {
+  color: rgba(37, 87, 132, 1);
+  background: rgba(33, 150, 243, 1);
+  box-shadow: 0 0 10px rgba(33, 150, 243, 1), 0 0 40px rgba(33, 150, 243, 1), 0 0 80px rgba(33, 150, 243, 1);
 }
 
+#main-frame {
+  display: grid;
+  grid-template-columns: minmax(auto, 1360px) 360px minmax(auto, 1360px);
+  margin: 0 auto;
+}
 #grid {
   margin: 0 auto;
-  background-color: orange;
   width: 360px;
-  /* height: 300px; */
-  /* position: absolute; */
   top: 150px;
-  /* left: 33%; */
   font-size: 0px;
-  /* position: fixed; */
 }
+#playground {
+
+
+}
+#image-board{
+  position: absolute;
+}
+#rules {
+  padding: 25px;
+  letter-spacing: 2px;
+  text-shadow:
+  0 0 6px rgba(202,228,225,0.92),
+  0 0 30px rgba(202,228,225,0.34),
+  0 0 12px rgba(30,132,242,0.52);
+}
+#rules-title {
+  font-family: 'Press Start 2P';
+  text-align: center;
+  font-size: 18px;
+  width: 300px;
+  margin: 20px auto;
+  color: rgba(255, 255, 255, 1);
+}
+#rules-text {
+  max-width: 360px;
+  margin: 20px auto;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Press Start 2P';
+  margin-top: 50px;
+}
+#score {
+  letter-spacing: 2px;
+  padding: 25px;
+  text-shadow:
+  0 0 6px rgba(202,228,225,0.92),
+  0 0 30px rgba(202,228,225,0.34),
+  0 0 12px rgba(30,132,242,0.52);
+}
+#score-title{
+  font-family: 'Press Start 2P';
+  text-align: center;
+  width: 300px;
+  margin: 20px auto;
+  color: rgba(255, 255, 255, 1);
+}
+#scoreboard {
+  font-family: 'Press Start 2P';
+  font-size: 40px;
+  width: 200px;
+  margin: 40px auto;
+  color: rgba(255, 255, 255, 1);
+}
+#scoreboard img {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+}
+#scoreboard div {
+  margin-bottom: 15px;
+}
+
 .square {
   width: 120px;
   height: 120px;
   display: inline-block;
-  background-color: grey;
-  outline: 1px solid black;
+  outline: 3px solid rgba(33, 150, 243, 1);
+  cursor: pointer;
 }
-img {
-  /* float: left; */
-  /* text-align: center;
-  display: block; */
-  margin: 10px;
-}
+
+
 #wichturn{
+  font-family: 'Press Start 2P';
   width: 600px;
-  height: 30px;
-  margin: 25px auto;
+  height: 60px;
+  margin: 35px auto 35px;
   text-align: center;
+  color: rgba(255, 255, 255, 1);
+  line-height: 30px;
+  text-shadow:
+  0 0 6px rgba(202,228,225,0.92),
+  0 0 30px rgba(202,228,225,0.34),
+  0 0 12px rgba(30,132,242,0.52);
 }
 #wichturn img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin: 0;
 }
-/* p {
-  position: relative;
-  margin: 0;
-  max-height: 100px;
-  max-width: 100px;
-  font-size: 30px;
-  line-height: 100px;
+.cross, .circle {
+  transition: all 0.5s;
+  position: absolute;
+  margin: 10px;
+  display: none;
+}
+/* @keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(30,132,242,0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 38px rgba(30,132,242,0.88),
+    0 0 60px rgba(30,132,242,1);
+  }
 } */

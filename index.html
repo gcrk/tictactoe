@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>TIC TAC TOE</title>
 </head>
 <body>
@@ -20,23 +21,43 @@
 
       </div>
     </div>
-    <div id="wichturn"><img src='img/cross.png'> start !!!</div>
-    <button id='resetbutton' onclick="reset()">Reset !</button>
+    <div id="wichturn"></div>
+
+    <!-- <button id='resetbutton' onclick='reset()'>Reset the board !</button>
+    <button id='restartbutton' onclick='restart()'>Restart a game !</button> -->
   </header>
+  <div id="main-frame">
+    <div id="rules">
+      <h2 id="rules-title">--How to Play--</h2>
+      <div id="rules-text">In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row.</div>
+    </div>
+    <div id="playground">
+      <div id="grid">
+        <div class="square" id="topleft"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="topcenter"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="topright"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="middleleft"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="middlecenter"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="middleright"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="bottomleft"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="bottomcenter"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
+        <div class="square" id="bottomright"><img src='img/cross.png' class='cross'><img src='img/circle.png' class='circle'></div>
 
-    <div id="grid">
-      <div class="square" id="topleft" onclick="crossCircle('topleft')"></div>
-      <div class="square" id="topcenter" onclick="crossCircle('topcenter')"></div>
-      <div class="square" id="topright" onclick="crossCircle('topright')"></div>
-      <div class="square" id="middleleft" onclick="crossCircle('middleleft')"></div>
-      <div class="square" id="middlecenter" onclick="crossCircle('middlecenter')"></div>
-      <div class="square" id="middleright" onclick="crossCircle('middleright')"></div>
-      <div class="square" id="bottomleft" onclick="crossCircle('bottomleft')"></div>
-      <div class="square" id="bottomcenter" onclick="crossCircle('bottomcenter')"></div>
-      <div class="square" id="bottomright" onclick="crossCircle('bottomright')"></div>
-
+      </div>
+    </div>
+    <div id="score">
+      <h2 id='score-title'>--Score--</h2>
+      <div id="scoreboard">
+        <div><img src='img/cross.png'><span id="cross-score">0</span></div>
+        <div><img src='img/circle.png'><span id="circle-score">0</span></div>
+      </div>
     </div>
 
+  </div>
+
+<footer>
+  <div id="restart">New Game.</div>
+</footer>
 
 
 </body>
