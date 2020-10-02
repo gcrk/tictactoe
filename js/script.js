@@ -57,7 +57,6 @@ $(document).ready(function(){
       $('.circle', this).css('opacity', '1');
     }
   });
-
   $( ".square" ).click(function(e) {
     let position = $(this).attr('id');
     if ( theWinnerIs === 'draw' || theWinnerIs === 'crosswin' || theWinnerIs === 'circlewin' ){
@@ -75,6 +74,21 @@ $(document).ready(function(){
     $('h1').toggleClass('anim');
   })
 });
+
+function crossCircle(i){
+  let turn = wichTurn();
+  if (turn  === 'crossturn') {
+    gridCross[`${i}`] = true;
+    $(`#${i} .cross`).show();
+    $(`#${i} .cross`).css('opacity', '1');
+  } else {
+    gridCircle[`${i}`] = true;
+    $(`#${i} .circle`).show();
+    $(`#${i} .circle`).css('opacity', '1');
+  }
+  wichTurn();
+  winner();
+};
 
 function winner() {
 
@@ -131,10 +145,8 @@ function wichTurn(){
     return 'draw'
   }
   if ( (turn % 2) === 0 ){
-    // $('#wichturn').html(`${cross}: Your Move !!!`)
     return 'crossturn'
   } else {
-    // $('#wichturn').html(`${circle}: Your Move !!!`)
     return 'circleturn'
   }
 };
@@ -165,20 +177,6 @@ function restart(){
   updateScore();
 };
 
-function crossCircle(i){
-  let turn = wichTurn();
-  if (turn  === 'crossturn') {
-    gridCross[`${i}`] = true;
-    $(`#${i} .cross`).show();
-    $(`#${i} .cross`).css('opacity', '1');
-  } else {
-    gridCircle[`${i}`] = true;
-    $(`#${i} .circle`).show();
-    $(`#${i} .circle`).css('opacity', '1');
-  }
-  wichTurn();
-  winner();
-};
 function updateScore(){
   $('#cross-score').html(`${scoreCross}`);
   $('#circle-score').html(`${scoreCircle}`);
