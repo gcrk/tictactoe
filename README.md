@@ -40,5 +40,5 @@ There is a main function to play on the board and other functions to check if th
 
 ## Next steps
 
-I'm working on a single player mode with a CPU player with choice of easy or hard mode.
-impreovements of the design.
+* I'm working on a single player mode with a CPU player with choice of easy or hard mode.
+* Improvements of the design.
