@@ -72,7 +72,7 @@ $(document).ready(function(){
     restart();
   });
   $('#toggle').click(function(){
-    $('h1').toggleClass('anim')
+    $('h1').toggleClass('anim');
   })
 });
 
@@ -98,18 +98,18 @@ function winner() {
   const cibr = gridCircle.bottomright;
 
   if ( ( crtl && crtc && crtr ) || ( crml && crmc && crmr ) || ( crbl && crbc && crbr ) || ( crtl && crml && crbl ) || ( crtc && crmc && crbc ) || ( crtr && crmr && crbr ) || ( crtl && crmc && crbr ) || ( crtr && crmc && crbl ) ){
-    $('#wichturn').html(`Game Over: ${cross} WIN !!!<br>Replay?`);
+    $('#wichturn').html(`Game Over: ${cross} WIN !!!<br><span id='replay'>Replay? (click the board)</span>`);
     scoreCross += 1;
     updateScore();
     theWinnerIs = "crosswin"
   } else if ( ( citl && citc && citr ) || ( ciml && cimc && cimr ) || ( cibl && cibc && cibr ) || ( citl && ciml && cibl ) || ( citc && cimc && cibc ) || ( citr && cimr && cibr ) || ( citl && cimc && cibr ) || ( citr && cimc && cibl ) ){
     // console.log(' circle WIN !!!!');
-    $('#wichturn').html(`Game Over: ${circle} WIN !!!<br>Replay?`);
+    $('#wichturn').html(`Game Over: ${circle} WIN !!!<br><span id='replay'>Replay? (click the board)</span>`);
     scoreCircle += 1;
     updateScore();
     theWinnerIs = "circlewin"
   } else if (wichTurn() === 'draw') {
-    $('#wichturn').html(`Game Over: ${cross} DRAW !!! ${circle}<br>Replay?`);
+    $('#wichturn').html(`Game Over: ${cross} DRAW !!! ${circle}<br><span id='replay'>Replay? (click the board)</span>`);
     theWinnerIs = "draw"
   } else {
     theWinnerIs = "nowinneryet"
