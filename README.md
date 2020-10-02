@@ -1,4 +1,4 @@
-# TIC TAC TOE for NES
+# TIC TAC TOE - Arcade Game style
 
 This is my first project during my GA Software Engineering Immersive course.
 
@@ -19,7 +19,7 @@ The game keep the score until you click the New Game button.
 
 ## Design
 
-I tried to recreate an old school NES style design with fonts and glowing effects.
+I tried to recreate an old school Arcade Game style design with fonts and glowing effects.
 I use a 8bits style font from google.
 A use some text-shadow CSS and blinking animation to recreate a glowing effect like old school arcade game.
 There is a hidden button you can find to get a nicer effect on the title.
