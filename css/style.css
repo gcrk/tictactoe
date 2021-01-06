@@ -64,6 +64,12 @@ h1 {
   width: 360px;
   top: 150px;
   font-size: 0px;
+  /* border: 1px solid rgba(33, 150, 243, 1); */
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  /* box-shadow: 0 0 10px rgba(33, 150, 243, 1), 0 0 40px rgba(33, 150, 243, 1), 0 0 80px rgba(33, 150, 243, 1); */
+
 }
 #image-board{
   position: absolute;
@@ -123,17 +129,27 @@ h1 {
 }
 
 .square {
-  width: 120px;
-  height: 120px;
-  display: inline-block;
-  outline: 3px solid rgba(33, 150, 243, 1);
   cursor: pointer;
+  border-radius: 20px;
+  box-shadow:
+    0 0 1px rgba(33, 150, 243, 1),
+    0 0 3px rgba(33, 150, 243, 1),
+    0 0 6px rgba(33, 150, 243, 1),
+    0 0 1px rgba(33, 150, 243, 1) inset,
+    0 0 3px rgba(33, 150, 243, 1) inset,
+    0 0 6px rgba(33, 150, 243, 1) inset;
+  width: 104px;
+  height: 104px;
+  margin: auto;
 }
 .cross, .circle {
   transition: all 0.5s;
   position: absolute;
-  margin: 10px;
+  margin: 17px;
   display: none;
+  /* margin: 0; */
+  width: 70px;
+  height: 70px;
 }
 
 #wichturn{

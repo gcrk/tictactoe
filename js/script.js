@@ -3,26 +3,26 @@ const cross = "<img src='img/cross.png'>";
 let scoreCross = 0;
 let scoreCircle = 0;
 const gridCross = {
-    topleft: null,
-    topcenter: null,
-    topright: null,
-    middleleft: null,
-    middlecenter: null,
-    middleright: null,
-    bottomleft: null,
-    bottomcenter: null,
-    bottomright: null
+    topleft: false,
+    topcenter: false,
+    topright: false,
+    middleleft: false,
+    middlecenter: false,
+    middleright: false,
+    bottomleft: false,
+    bottomcenter: false,
+    bottomright: false
 }
 const gridCircle = {
-    topleft: null,
-    topcenter: null,
-    topright: null,
-    middleleft: null,
-    middlecenter: null,
-    middleright: null,
-    bottomleft: null,
-    bottomcenter: null,
-    bottomright: null
+    topleft: false,
+    topcenter: false,
+    topright: false,
+    middleleft: false,
+    middlecenter: false,
+    middleright: false,
+    bottomleft: false,
+    bottomcenter: false,
+    bottomright: false
 }
 let theWinnerIs = 'nowinneryet';
 
@@ -89,7 +89,9 @@ function crossCircle(i){
   wichTurn();
   winner();
 };
+function cpuPlay() {
 
+}
 function winner() {
 
   const crtl = gridCross.topleft;
@@ -153,10 +155,10 @@ function wichTurn(){
 
 function reset(){
   Object.keys(gridCross).forEach(function(index) {
-    gridCross[index] = null
+    gridCross[index] = false
   });
   Object.keys(gridCircle).forEach(function(index) {
-    gridCircle[index] = null
+    gridCircle[index] = false
   });
   $('.square img').hide();
   $('#wichturn').html(``)
@@ -164,10 +166,10 @@ function reset(){
 };
 function restart(){
   Object.keys(gridCross).forEach(function(index) {
-    gridCross[index] = null
+    gridCross[index] = false
   });
   Object.keys(gridCircle).forEach(function(index) {
-    gridCircle[index] = null
+    gridCircle[index] = false
   });
   $('.square img').hide();
   $('#wichturn').html(``)
